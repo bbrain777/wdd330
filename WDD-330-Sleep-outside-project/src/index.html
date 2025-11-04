@@ -46,7 +46,7 @@
         <h2>Top Products</h2>
 
         <!-- ✅ Empty list that JS will populate dynamically -->
-        <ul id="product-list" class="product-list" aria-live="polite"></ul>
+        <ul class="product-list"></ul>
       </section>
     </main>
 
@@ -56,6 +56,14 @@
     </footer>
 
     <!-- ✅ Load your dynamic list code -->
-    <script type="module" src="/js/main.js"></script>
+    <script type="module">
+      import ProductData from "/js/ProductData.mjs";
+      import ProductList from "/js/ProductList.mjs";
+
+      const listEl = document.querySelector(".product-list");
+      const dataSource = new ProductData("tents");
+      const list = new ProductList("tents", dataSource, listEl);
+      list.init();
+    </script>
   </body>
 </html>
