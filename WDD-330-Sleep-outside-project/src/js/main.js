@@ -9,7 +9,7 @@ const listElement =
 if (!listElement) {
   console.error("Missing #product-list element in index.html");
 } else {
-  const dataSource  = new ProductData("tents"); // -> /json/tents.json
+  const dataSource = new ProductData("tents"); // -> /json/tents.json
   const productList = new ProductList("tents", dataSource, listElement);
   productList.init();
 }
